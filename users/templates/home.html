@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Google SignIN</title>
+</head>
+<body>
+    {% load socialaccount %}
+    <h2>Google Login</h2>
+    <a href="{% provider_login_url 'google' %}?next=/">Login with Google</a>
+
+    {% if user.is_authenticated %}
+    <p>You are signedIn as {{user}}</p>
+    <p>Your email is signedIn as {{user.email}}</p>
+    <a href="logout">Logout</a>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-md-3">
+          <a class="btn btn-outline-dark" href="{% provider_login_url 'google' %}?next=/" role="button" style="text-transform:none">
+            <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://www.flaticon.com/free-icon/google_1000777?term=google&related_id=1000777" />
+            Login with Google
+          </a>
+        </div>
+      </div>
+      
+      <!-- Minified CSS and JS -->
+      <link   rel="stylesheet" 
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+              crossorigin="anonymous">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+              integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
+              crossorigin="anonymous">
+      </script>
+</body>
+</html>
