@@ -103,6 +103,22 @@ AUTHENTICATION_BACKENDS = [
 
 WSGI_APPLICATION = 'evalProject.wsgi.application'
 
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOW_CREDENTIALS = True
+
+
+CSRF_TRUSTED_ORIGINS = ['https://eval.thinkingai.in/']
+
+CORS_REPLACE_HTTPS_REFERER = True
+
+CSRF_COOKIE_DOMAIN = 'thinkingai.in'
+
+CORS_ORIGIN_WHITELIST = (
+    'eval.thinkingai.in',
+)
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
