@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'chatbot',
 
     'allauth',
     'django.contrib.sites',
@@ -71,6 +72,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # Add the account middleware:
     "allauth.account.middleware.AccountMiddleware",
+    'chatbot.middleware.ThemeMiddleware',
 ]
 
 ROOT_URLCONF = 'evalProject.urls'
