@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from transformers import BlenderbotForConditionalGeneration, BlenderbotTokenizer
+from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
-model_name = "facebook/blenderbot-400M-distill"
-tokenizer = BlenderbotTokenizer.from_pretrained(model_name)
-model = BlenderbotForConditionalGeneration.from_pretrained(model_name)
+model_name = "microsoft/DialoGPT-small"
+tokenizer = GPT2Tokenizer.from_pretrained(model_name)
+model = GPT2LMHeadModel.from_pretrained(model_name)
 
 def chatbot_response(input_text):
     input_ids = tokenizer.encode(input_text, return_tensors="pt")

@@ -177,7 +177,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'chat'
 
 ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
 
